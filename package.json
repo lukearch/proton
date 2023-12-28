@@ -1,0 +1,57 @@
+{
+  "name": "proton",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "types/**/*",
+    "proton.config,js",
+    "package.json",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon",
+    "start": "node dist/index.js",
+    "lint": "eslint src --ext .ts"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cpy-cli": "^5.0.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.0.1",
+    "express": "^4.18.2",
+    "fs-extra": "^11.2.0",
+    "prettier": "^3.1.1",
+    "reflect-metadata": "^0.2.1",
+    "tsyringe": "^4.8.0",
+    "typescript": "*"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.21",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.10.5",
+    "@types/reflect-metadata": "^0.1.0",
+    "@types/shelljs": "^0.8.15",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "nodemon": "^3.0.2",
+    "shelljs": "^0.8.5"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "dist/*"
+    ],
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "exec": "npm run build"
+  }
+}
